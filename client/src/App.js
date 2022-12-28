@@ -42,23 +42,13 @@ export default function App () {
   return (
     <div>
       <Link to="/"><h1>MOVIE LIST</h1></Link>
-      <Link to="/movies/1"><h1>TEST: MOVIE 1</h1></Link>
-      <Link to="/movies/2"><h1>TEST: MOVIE 2</h1></Link>
 
-
-
-      {/* <SavedList list={[]} /> //Stretch */}
+      <SavedList list={[]} /> 
 
       <div>
         <Switch>
-          <Route path="/movies/1">
-            <Movie movies={movieList} id={1}/>
-          </Route>
-          <Route path="/movies/2">
-            <Movie movies={movieList} id={2}/>
-          </Route>
-          <Route path="movies/:id">
-            <Movie movies={movieList} />
+          <Route path="/movies/:id">
+            <Movie />
           </Route>
           <Route path="/">
             <MovieList movies={movieList}/>

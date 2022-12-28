@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useRouteMatch } from 'react-router-dom'
 import axios from 'axios';
+
+import { useParams, useRouteMatch } from 'react-router-dom';
+
 
 export default function Movie(props) {
   const [movie, setMovie] = useState();
 
-  const { id } = props;
+  let { id } = useParams();
 
-
+  console.log(id);
 
   useEffect(() => {
     axios
       .get(`http://localhost:5001/api/movies/${id}`) // Study this endpoint with Postman
       .then(response => {
+        console.log(response);
         setMovie(response.data);
       })
       .catch(error => {
@@ -43,11 +46,11 @@ export default function Movie(props) {
         </div>
         <h3>Actors</h3>
 
-        {stars.map(star => (
+        {/* {stars.map(star => (
           <div key={star} className="movie-star">
             {star}
           </div>
-        ))}
+        ))} */}
       </div>
       <div className="save-button">Save</div>
     </div>

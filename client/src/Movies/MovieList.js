@@ -18,16 +18,16 @@ function MovieDetails(props) {
   const { title, director, metascore } = props.movie;
 
   return (
-    <Link to={`movies/${props.movie.id}`}>
-      <div className="movie-card">
+    <div className="movie-card">
+      <Link to={`movies/${props.movie.id}`}>
         <h2>{title}</h2>
-        <div className="movie-director">
-          Director: <em>{director}</em>
-        </div>
-        <div className="movie-metascore">
-          Metascore: <strong>{metascore}</strong>
-        </div>
+      </Link>
+      <div className="movie-director">
+        Director: <em>{director}</em>
       </div>
-    </Link>
+      <div className="movie-metascore">
+        Metascore: <strong>{metascore}</strong>
+      </div>
+    </div>
   );
 }
