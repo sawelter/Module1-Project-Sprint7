@@ -41,8 +41,6 @@ export default function App () {
 
   return (
     <div>
-      <Link to="/"><h1>MOVIE LIST</h1></Link>
-
       <SavedList list={[]} /> 
 
       <div>
